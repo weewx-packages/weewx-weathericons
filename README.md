@@ -26,9 +26,17 @@ HTML template. For example, after copying `weathericons` to the web root:
 
 Preserve the original license and attribution files. Replace assets yourself
 when updating the mirror; `weectl extension` does not manage this collection.
-Static SVG use has no Python dependency. The optional generators in [`bin`](bin)
-use Python 3; inspect `python bin/icons.py --help` before generating a custom set.
-WMO code selection, day/night selection and missing-data handling belong to
+Static SVG use has no Python dependency. To use the optional generators,
+install Git and Python 3, then download the source into an empty working
+directory:
+
+```sh
+git clone --depth 1 https://github.com/weewx-packages/weewx-weathericons.git
+cd weewx-weathericons
+python3 bin/icons.py --help
+```
+
+The generators use only Python's standard library. WMO code selection, day/night selection and missing-data handling belong to
 the application using these images. Keep the usage conditions below.
 
 

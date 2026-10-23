@@ -1,5 +1,37 @@
 # Wettersymbole und Icons / Weather related symbols and icons
 
+SVG-Wettersymbole für WMO-Wettercodes, Bewölkung, UV-Index, Jahreszeiten und
+thermische Belastung, mit Python-Skripten zur Erzeugung der Grafiken.
+Dieses Repository spiegelt [roe-dl/weathericons](https://github.com/roe-dl/weathericons).
+Es ist eine Sammlung von Bilddateien, keine installierbare WeeWX-Erweiterung;
+es gibt weder `install.py` noch ein Katalogpaket.
+
+SVG weather symbols for WMO codes, cloud cover, UV index, seasons and thermal
+stress, with Python generators. This mirror contains static assets and tools,
+with no WeeWX extension installer or catalog package. The reviewed source is
+revision `c5318a0a23ef43bb5277ecadca90c91c49432968`.
+
+## Einbinden / Use the icons
+
+Kopieren Sie die benötigten SVG-Dateien in ein Verzeichnis Ihres Webservers
+und referenzieren Sie sie aus Ihrer HTML-Vorlage. Es ist keine WeeWX-Service-
+oder Treiberaktivierung nötig. Beispiel nach Kopieren von `weathericons`:
+
+Copy the required SVG directory into your website and reference an icon in an
+HTML template. For example, after copying `weathericons` to the web root:
+
+```html
+<img src="/weathericons/clear-day.svg" alt="Clear sky">
+```
+
+Preserve the original license and attribution files. Replace assets yourself
+when updating the mirror; `weectl extension` does not manage this collection.
+Static SVG use has no Python dependency. The optional generators in [`bin`](bin)
+use Python 3; inspect `python bin/icons.py --help` before generating a custom set.
+WMO code selection, day/night selection and missing-data handling belong to
+the application using these images. Keep the usage conditions below.
+
+
 ## Inhalt / Contents
 
 * [Symbole / symbols and icons](#symbole--symbols-and-icons)
@@ -47,15 +79,15 @@ Nebel / fog | Schneefall / snow | Sonne und Mond / sun and moon
 
 Niesel / drizzle | Regen / rain | Schneeregen / sleet | Hagel / hail |
 -----------------|--------------|---------------------|--------------|
-![drizzle](weathericons/drizzle.svg) | ![rain](weathericons/rain.svg) | ![sleet](weathericons/sleet.svg) | ![hail](weathericons/hail.svg) | 
+![drizzle](weathericons/drizzle.svg) | ![rain](weathericons/rain.svg) | ![sleet](weathericons/sleet.svg) | ![hail](weathericons/hail.svg) |
 
 Regenschauer / rainshower | Schneeschauer / snowshower
 --------------------------|----------------------------
 ![rainshower](weathericons/rainshower-day.svg) ![rainshower](weathericons/rainshower-night.svg) | ![snowshower](weathericons/snowshower-day.svg) ![snowshower](weathericons/snowshower-night.svg)
 
-gefrierender Niesel / freezing drizzle | gefrierender Regen / freezing rain | Glatteis / glaze ice 
+gefrierender Niesel / freezing drizzle | gefrierender Regen / freezing rain | Glatteis / glaze ice
 -----------------------------------|------------------|----------------------
-![freezingdrizzle](weathericons/freezingdrizzle.svg) | ![freezingrain](weathericons/freezingrain.svg) ![freezingrain](weathericons/freezingrain2.svg) | ![glaze ice](weathericons/glazeice.svg) 
+![freezingdrizzle](weathericons/freezingdrizzle.svg) | ![freezingrain](weathericons/freezingrain.svg) ![freezingrain](weathericons/freezingrain2.svg) | ![glaze ice](weathericons/glazeice.svg)
 
 Wetterleuchten / lightning | Gewitter / thunderstorm | Hagelgewitter / thunderstorm with hail
 ---------------------------|-------------------------|---------------------------------------
@@ -65,9 +97,9 @@ Sandsturmgewitter / thunderstorm with sandstorm |
 ------------------------------------------------|
 ![thunderstorm-duststorm](weathericons/thunderstorm-duststorm.svg) |
 
-Regentropfen / raindrop | Schneeflocke / snowflake | keine Daten / no data 
+Regentropfen / raindrop | Schneeflocke / snowflake | keine Daten / no data
 ------------------------|--------------------------|-----------------------
-![raindrop](weathericons/raindrop.svg) | ![snowflake](weathericons/snowflake.svg) ![snowflake](weathericons/snowflake2.svg) | ![no data](weathericons/unknown.svg) 
+![raindrop](weathericons/raindrop.svg) | ![snowflake](weathericons/snowflake.svg) ![snowflake](weathericons/snowflake2.svg) | ![no data](weathericons/unknown.svg)
 
 ### Allgemeine Symbole, gefüllt / General icons, filled
 
@@ -83,7 +115,7 @@ Nacht-Wind / night-wind |![clear night](weathericons-filled/clear-night-wind.svg
 
 Wind / wind | Sandsturm / sandstorm | Schneetreiben / blowing snow
 ------------|-----------------------|-------------------------------
-![wind](weathericons-filled/wind.svg) | ![wind](weathericons-filled/sandstorm.svg) | ![wind](weathericons-filled/blowingsnow.svg) 
+![wind](weathericons-filled/wind.svg) | ![wind](weathericons-filled/sandstorm.svg) | ![wind](weathericons-filled/blowingsnow.svg)
 
 Nebel / fog | Schneefall / snow | Sonne und Mond / sun and moon
 ------------|-------------------|---------------
@@ -91,11 +123,11 @@ Nebel / fog | Schneefall / snow | Sonne und Mond / sun and moon
 
 Niesel / drizzle | Regen / rain | Schneeregen / sleet | Hagel / hail |
 -----------------|--------------|---------------------|--------------|
-![drizzle](weathericons-filled/drizzle.svg) | ![rain](weathericons-filled/rain.svg) | ![sleet](weathericons-filled/sleet.svg) | ![hail](weathericons-filled/hail.svg) | 
+![drizzle](weathericons-filled/drizzle.svg) | ![rain](weathericons-filled/rain.svg) | ![sleet](weathericons-filled/sleet.svg) | ![hail](weathericons-filled/hail.svg) |
 
-gefrierender Niesel / freezing drizzle | gefrierender Regen / freezing rain | Glatteis / glaze ice 
+gefrierender Niesel / freezing drizzle | gefrierender Regen / freezing rain | Glatteis / glaze ice
 -----------------------------------|------------------|----------------------
-![freezingdrizzle](weathericons-filled/freezingdrizzle.svg) | ![freezingrain](weathericons-filled/freezingrain.svg) ![freezingrain](weathericons-filled/freezingrain2.svg) | ![glaze ice](weathericons-filled/glazeice.svg) 
+![freezingdrizzle](weathericons-filled/freezingdrizzle.svg) | ![freezingrain](weathericons-filled/freezingrain.svg) ![freezingrain](weathericons-filled/freezingrain2.svg) | ![glaze ice](weathericons-filled/glazeice.svg)
 
 Wetterleuchten / lightning | Gewitter / thunderstorm | Hagelgewitter / thunderstorm with hail
 ---------------------------|-------------------------|---------------------------------------
@@ -105,17 +137,17 @@ Sandsturmgewitter / thunderstorm with sandstorm |
 ------------------------------------------------|
 ![thunderstorm-duststorm](weathericons-filled/thunderstorm-duststorm.svg) |
 
-Regentropfen / raindrop | Schneeflocke / snowflake | keine Daten / no data 
+Regentropfen / raindrop | Schneeflocke / snowflake | keine Daten / no data
 ------------------------|--------------------------|-----------------------
-![raindrop](weathericons-filled/raindrop.svg) | ![snowflake](weathericons-filled/snowflake.svg) ![snowflake](weathericons-filled/snowflake2.svg) | ![no data](weathericons-filled/unknown.svg) 
+![raindrop](weathericons-filled/raindrop.svg) | ![snowflake](weathericons-filled/snowflake.svg) ![snowflake](weathericons-filled/snowflake2.svg) | ![no data](weathericons-filled/unknown.svg)
 
 
 ### Thermische Belastung / Thermal stress
 
 Art | keine | gering | mäßig | stark | extrem
 ----|-------|--------|-------|-------|--------
-Kälte | ![none](thermalstress/thermalstress-none.svg) | ![minor](thermalstress/thermalstress-cold-minor.svg) | ![moderate](thermalstress/thermalstress-cold-moderate.svg) | ![severe](thermalstress/thermalstress-cold-severe.svg) | ![extreme](thermalstress/thermalstress-cold-extreme.svg) 
-Wärme | ![none](thermalstress/thermalstress-none.svg) | ![minor](thermalstress/thermalstress-heat-minor.svg) | ![moderate](thermalstress/thermalstress-heat-moderate.svg) | ![severe](thermalstress/thermalstress-heat-severe.svg) | ![extreme](thermalstress/thermalstress-heat-extreme.svg) 
+Kälte | ![none](thermalstress/thermalstress-none.svg) | ![minor](thermalstress/thermalstress-cold-minor.svg) | ![moderate](thermalstress/thermalstress-cold-moderate.svg) | ![severe](thermalstress/thermalstress-cold-severe.svg) | ![extreme](thermalstress/thermalstress-cold-extreme.svg)
+Wärme | ![none](thermalstress/thermalstress-none.svg) | ![minor](thermalstress/thermalstress-heat-minor.svg) | ![moderate](thermalstress/thermalstress-heat-moderate.svg) | ![severe](thermalstress/thermalstress-heat-severe.svg) | ![extreme](thermalstress/thermalstress-heat-extreme.svg)
 
 
 ### Jahreszeiten / Seasons
@@ -134,8 +166,8 @@ siehe / see [photovoltaicsicons](https://github.com/roe-dl/photovoltaicsicons)
 ## Lizenz und Nutzungsrechte
 
 Die Symbole der Code-Tabelle 4677 stammen ursprünglich von Wikimedia-Commons
-und sind dort der Public Domain (PD) zugeordnet. Sie wurden von mir 
-bearbeitet, insbesondere eingefärbt. Für Code-Tabelle 4680 fehlende 
+und sind dort der Public Domain (PD) zugeordnet. Sie wurden von mir
+bearbeitet, insbesondere eingefärbt. Für Code-Tabelle 4680 fehlende
 Symbole wurden von mir selbst gestaltet.
 
 Die Symbole können im nichtkommerziellen Bereich frei verwendet werden.
@@ -146,8 +178,8 @@ der GPL.
 ## License and Usage
 
 The symbols of code table 4677 are based on Wikimedia Commons, where
-they are marked as released to the Public Domain (PD). They have been 
-edited, especially colored. Missing symbols for code table 4680 I created 
+they are marked as released to the Public Domain (PD). They have been
+edited, especially colored. Missing symbols for code table 4680 I created
 by myself.
 
 In non-commercial domain the symbols can be freely used. What you create
